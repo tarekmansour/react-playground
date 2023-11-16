@@ -1,9 +1,7 @@
 import "./App.css";
 import Profile from "./Profile";
-
-function MyButton() {
-  return <button>I'm a button</button>;
-}
+import ShoppingList from "./List";
+import MyButton from "./Button";
 
 function App() {
   return (
@@ -11,6 +9,7 @@ function App() {
       <h1>Welcome to my app</h1>
       <MyButton />
       <Profile />
+      <ShoppingList />
     </div>
   );
 }
