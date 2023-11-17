@@ -1,6 +1,8 @@
 import { useState } from "react";
 
 export default function MyButton() {
+use
+
   const [count, setCount] = useState(0);
 
   function handleClick() {
@@ -9,6 +11,7 @@ export default function MyButton() {
   
 return (
     <button onClick={handleClick}>
+      {/* UI updates when state (count value) changes */}
       Clicked {count} times
     </button>
   );
