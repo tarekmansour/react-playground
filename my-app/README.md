@@ -13,7 +13,25 @@
   - the hook take one argument which is the default state `useState(0)`, the function returns an array which contains two values that we can use within the component. 
     - the reason of returning an array is because we can destructure them with javascript to easily assign values to local variables that we can name to whatever we want. e.g `const [count, setCount] = useState(0);`
     - `count` is a Reactive data or state, if it changes in future, react will automatically rebuild the UI to show its new value.
-    - `setCount` is a setter function, we can call it to handle changes you want. e.g `onClick= {() => setCount(count + 1)}`
+    - `setCount` is a setter function, we can call it to handle changes you want. e.g `onClick= {() => setCount(count + 1)}`.
+    
+    **Initial state**:
+    1. Providing a Function Directly as Initial State:
+    ```javascript
+      const [state, setState] = useState(() => { return 0; });
+    ```
+       In this example, you are providing a function directly as the initial state. **This function will be executed once**, during the initial render of the component. The return value of this function will be set as the initial state. This pattern is often used when the initial state needs to be calculated based on some logic or if you want to defer the computation until the component is rendered.
+
+    2. Passing a Function Result:
+    ```javascript
+      const computeInitialState = () => {return 0};
+      const [state, setState] = useState(computeInitialState());
+    ```
+       In this example, the `computeInitialState` function is called outside of the useState call, so its result is determined before the component renders and it will be **executed every time the component renders**. Passing a function result is useful when you have a separate, reusable function to compute the initial state.
+
+
+- continue with hooks: video ==> https://www.youtube.com/watch?v=TNhaISOUy6Q
+minute 3:50
 
 ## Javascript
 - `var` vs `let`: var is used to declare a variable whose value can be changed later, while let is used to declare a variable whose value can be changed later and whose scope is limited to the block in which it is declared.
