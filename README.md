@@ -33,6 +33,22 @@
 - continue with hooks: video ==> https://www.youtube.com/watch?v=TNhaISOUy6Q
 minute 3:50
 
+
+## Component Lifecycle
+
+### Mounting Phase
+**constructor()**
+- This is the first method called when a component is created.
+- Used for initializing state and binding event handlers.
+
+
+### Updating Phase
+
+
+### Unmounting Phase
+
+
+
 ## Javascript
 - `var` vs `let`: var is used to declare a variable whose value can be changed later, while let is used to declare a variable whose value can be changed later and whose scope is limited to the block in which it is declared.
 - **Destructuring assignment**: takes values from arrays or properties from objects and set them as local variables, it's a technique that can make your javascript code more concise and readable
