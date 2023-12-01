@@ -1,5 +1,13 @@
 # What I learned with React playground
 
+## Table of contents
+- [Basics](#basics)
+- [Hooks](#hooks)
+- [Component Lifecycle (with Class components)](#component-lifecycle-with-class-components)
+- [Javascript](#javascript)
+- [Other references](#other-references)
+
+## Basics
 - React component names must always start with a capital letter, while html tags must be lowercase.
 - The `export default` keyword specify the main component in the file.
 - Components can not return multiple **JSX** tags.
@@ -30,23 +38,58 @@
        In this example, the `computeInitialState` function is called outside of the useState call, so its result is determined before the component renders and it will be **executed every time the component renders**. Passing a function result is useful when you have a separate, reusable function to compute the initial state.
 
 
-- continue with hooks: video ==> https://www.youtube.com/watch?v=TNhaISOUy6Q
-minute 3:50
 
-
-## Component Lifecycle
+## Component Lifecycle (with Class components)
 
 ### Mounting Phase
 **constructor()**
 - This is the first method called when a component is created.
 - Used for initializing state and binding event handlers.
 
+**static getDerivedStateFromProps()**
+- This method is called before every render.
+- Used to update the state based on changes in props.
+
+**render()**
+-This is where the component renders UI.
+-It should be a pure function without side effects.
+
+**componentDidMount()**
+- Invoked once the component is mounted to the DOM.
+- Used for performing actions like fetching data from a server.
 
 ### Updating Phase
 
+**static getDerivedStateFromProps()**
+- Similar to the mounting phase, but called before every update.
+
+**shouldComponentUpdate()**
+- Returns a boolean to indicate whether the component should re-render.
+- Used for performance optimization.
+
+**render()**
+Renders the updated UI.
+
+**getSnapshotBeforeUpdate()**
+- Called right before the changes from the virtual DOM are to be reflected in the DOM.
+- Used for tasks like saving scroll position before an update.
+
+**componentDidUpdate()**
+- Invoked after the component is updated in the DOM.
+- Useful for tasks that need the DOM after an update.
 
 ### Unmounting Phase
+**componentWillUnmount()**
+- Invoked immediately before a component is unmounted and destroyed.
+- Used for cleanup tasks like canceling network requests or cleaning up subscriptions.
 
+### Error Handling
+
+**static getDerivedStateFromError()**
+- Used to render a fallback UI after an error is thrown in a descendant component.
+
+**componentDidCatch()**
+- Invoked after an error has been thrown by a descendant component.
 
 
 ## Javascript
