@@ -21,12 +21,13 @@ export default function Blog() {
 
     return (
         <>
+            <h1>Blog:</h1>
             <div>
                 <button onClick={() => setResourceType('posts')}>Posts</button>
                 <button onClick={() => setResourceType('users')}>Users</button>
                 <button onClick={() => setResourceType('comments')}>Comments</button>
             </div>
-            <h1>{resourceType}</h1>
+            <h2>{resourceType}</h2>
             {items.map(item => {
                 return <pre>{JSON.stringify(item)}</pre>
             })}

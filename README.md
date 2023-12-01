@@ -6,6 +6,8 @@
 - [Component Lifecycle](#component-lifecycle)
 - [Javascript](#javascript)
 - [Other references](#other-references)
+- [Virtual DOM](#virtual-dom)
+- [Redux](#redux)
 
 ## Basics
 - React component names must always start with a capital letter, while html tags must be lowercase.
@@ -121,6 +123,27 @@ function MyComponent() {
     console.log('Data has changed. Updating...');
   }, [data]); // Only run when 'data' changes
 ```
+
+## Virtual DOM
+
+### Real DOM vs. Virtual DOM:
+
+- The real DOM (Document Object Model) represents the actual HTML elements on a webpage.
+- The Virtual DOM is a lightweight copy or representation of the real DOM. It is a JavaScript object that mimics the structure of the actual DOM elements.
+
+### Reconciliation Process:
+
+- When the state of a React component changes (due to user interaction, data updates, etc.), React creates a new Virtual DOM tree representing the updated UI.
+- React then compares the new Virtual DOM tree with the previous one using a process called `reconciliation` or `diffing`. It identifies the differences or changes between the two trees.
+
+## Redux
+Redux is a predictable state container for JavaScript apps.
+
+There are three main building blocks in Redux:
+
+- **A store** — an object that holds the app state data.
+- **A reducer** — a function that returns some state data, triggered by an action type.
+- **An action** — an object that tells the reducer how to change the state. It must contain a type property, and it can contain an optional payload property.
 
 ## Javascript
 - `var` vs `let`: var is used to declare a variable whose value can be changed later, while let is used to declare a variable whose value can be changed later and whose scope is limited to the block in which it is declared.
