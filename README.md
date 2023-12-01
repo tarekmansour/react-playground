@@ -3,7 +3,7 @@
 ## Table of contents
 - [Basics](#basics)
 - [Hooks](#hooks)
-- [Component Lifecycle (with Class components)](#component-lifecycle-with-class-components)
+- [Component Lifecycle](#component-lifecycle)
 - [Javascript](#javascript)
 - [Other references](#other-references)
 
@@ -37,9 +37,13 @@
     ```
        In this example, the `computeInitialState` function is called outside of the useState call, so its result is determined before the component renders and it will be **executed every time the component renders**. Passing a function result is useful when you have a separate, reusable function to compute the initial state.
 
+<!-- - continue with hooks: video ==> https://www.youtube.com/watch?v=TNhaISOUy6Q
+minute 3:50 -->
 
 
-## Component Lifecycle (with Class components)
+## Component Lifecycle
+
+## With Class components
 
 ### Mounting Phase
 **constructor()**
@@ -68,7 +72,7 @@
 - Used for performance optimization.
 
 **render()**
-Renders the updated UI.
+- Renders the updated UI.
 
 **getSnapshotBeforeUpdate()**
 - Called right before the changes from the virtual DOM are to be reflected in the DOM.
@@ -91,6 +95,32 @@ Renders the updated UI.
 **componentDidCatch()**
 - Invoked after an error has been thrown by a descendant component.
 
+## With Functional components
+- Functional components can also use lifecycle-like features using hooks like _useEffect_.
+- _useEffect_ allow us to implement logic for all previous lifecycle within a single function API.
+- Side effects refer to any asynchronous or non-pure operations such as data fetching, subscriptions, manual DOM manipulations, and so on. The useEffect hook allows you to perform these side effects in a React component.
+
+```javascript
+function MyComponent() {
+  useEffect(() => {
+    // Side effect code goes here
+    // It will run after the first render (component is mounted)
+    // and after every re-render by default
+
+    // Cleanup function (optional)
+    return () => {
+      // Code to clean up the side effect
+      // It will run before the component unmounts
+      // and before every re-render
+    };
+  }, [/* dependency array */]); // Empty dependency array means it only runs once, equivalent to componentDidMount
+
+  // useEffect with dependencies acts like componentDidUpdate
+  useEffect(() => {
+    // Perform actions when dependencies (e.g., props or state) change
+    console.log('Data has changed. Updating...');
+  }, [data]); // Only run when 'data' changes
+```
 
 ## Javascript
 - `var` vs `let`: var is used to declare a variable whose value can be changed later, while let is used to declare a variable whose value can be changed later and whose scope is limited to the block in which it is declared.

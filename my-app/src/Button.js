@@ -4,10 +4,10 @@ export default function MyButton() {
   const [count, setCount] = useState(0);
 
   function handleClick() {
-   setCount(count + 1);
+    setCount(count + 1);
   }
-  
-return (
+
+  return (
     <button onClick={handleClick}>
       {/* UI updates when state (count value) changes */}
       Clicked {count} times

@@ -3,6 +3,7 @@ import Profile from "./Profile";
 import ShoppingList from "./List";
 import MyButton from "./Button";
 import User from "./User";
+import Blog from "./Blog";
 
 function App() {
   return (
@@ -11,8 +12,10 @@ function App() {
       <MyButton />
       <Profile />
       <ShoppingList />
-      <br/>
+      <br />
       <User />
+      <br />
+      <Blog />
     </div>
   );
 }
